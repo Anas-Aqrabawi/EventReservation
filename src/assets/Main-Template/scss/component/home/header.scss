@@ -1,0 +1,123 @@
+.main-nav{
+    position: relative;
+    z-index: 999;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    max-width:100%;
+    width:100%;
+    flex:1 1 100%;
+    background-color:$heading-color;
+    padding:5px 0px;
+
+    .logo{
+        width:30%;
+        flex:1 1 30%;
+        max-width:30%;
+        display:block;
+        padding:0 15px;
+
+        @media screen and(max-width:768px){
+            width: 100%;
+            flex:1 1 100%;
+            max-width: 100%;
+            padding:10px 15px;
+        }
+    }
+
+    .my-nav{
+        width:70%;
+        flex:1 1 70%;
+        max-width:70%;
+        display:flex;
+        align-items:center;
+        justify-content:flex-end;
+
+        @media screen and(max-width:767.98px){
+            width: 100%;
+            flex:1 1 100%;
+            max-width: 100%;
+            justify-content:flex-start;
+            
+        }
+
+        .menu{
+            position: relative;
+            @media screen and(max-width:767.98px){
+                display:none;
+                left:-100%;
+                transition: all ease-in-out 0.5s;
+            }
+            ul{
+                li{
+                    display:inline-block;
+                    font-size:16px;
+                    text-transform:capitalize;
+                    transition:0.4s;
+                    padding:10px 15px;
+
+                    @media screen and(max-width:767.98px){
+                        display:block;
+                        padding:15px 0px;
+                    }
+
+                    @media (min-width: 768px) and (max-width: 991.98px){
+                        padding:10px;
+                    }
+
+                    a{
+                        color:$color-use;
+                        padding:10px 17px;
+                        font-weight:600;
+                        @media (min-width: 768px) and (max-width: 991.98px){
+                            padding:10px 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+ .menu-toggle {
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    margin: 0px 0 0 40px;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+
+    &::before{
+        position: absolute;
+        content: "\f0c9";
+        font-size: 25px;
+        color: #fff;
+        font-family: "Font Awesome 5 Pro";
+    }
+
+    @media screen and (max-width: 768px){
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.active::before {
+    content: "\f00d" !important;
+}
+
+.menu.active {
+    display: block !important;
+    left:0 !important;
+}
+
+.menu.active::before{
+    display:none;
+}
